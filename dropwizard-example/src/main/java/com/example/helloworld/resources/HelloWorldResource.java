@@ -36,6 +36,11 @@ public class HelloWorldResource {
     @Timed(name = "get-requests")
     @CacheControl(maxAge = 1, maxAgeUnit = TimeUnit.DAYS)
     public Saying sayHello(@QueryParam("name") Optional<String> name) {
+        LOGGER.trace("trace");
+        LOGGER.debug("debug");
+        LOGGER.info("info");
+        LOGGER.warn("warn");
+        LOGGER.error("error");
         return new Saying(counter.incrementAndGet(), template.render(name));
     }
 

@@ -77,6 +77,12 @@ logging:
       archivedFileCount: 7
       timeZone: UTC
       maxFileSize: 10MB
+    - type: errbit
+      threshold: ERROR
+      url: http://localhost:3001/notifier_api/v2/notices
+      apiKey: *** key ***
+      environment: local
+      includeCallerData: true
 
 # the key needs to match the suffix of the renderer
 viewRendererConfiguration:
